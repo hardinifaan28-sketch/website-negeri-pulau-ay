@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Website informasi resmi Negeri Administratif Pulau Ay, Kecamatan Banda, Kabupaten Maluku Tengah.">
+<title>Negeri Administratif Pulau Ay</title>
+<style>
+:root{--navy:#123451;--blue:#176b87;--gold:#e4b653;--ink:#203040;--muted:#657786;--bg:#f4f7f9;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:inherit;text-decoration:none}.top{background:var(--navy);color:#fff;padding:8px 5%;font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+header{background:#fff;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px #102a3a18}.head{max-width:1160px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:12px}.logo{width:52px;height:52px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--navy);font-weight:bold;font-size:13px;text-align:center;line-height:1.1}.brand strong{display:block;color:var(--navy);font-size:17px}.brand small{color:var(--muted)}
+nav{display:flex;gap:17px;align-items:center;font-size:14px;font-weight:bold}nav a:hover{color:var(--blue)}.menu{display:none;background:var(--navy);color:#fff;border:0;border-radius:7px;padding:9px 12px;font-size:18px}
+.hero{background:linear-gradient(100deg,#0d2d47ed,#176b87b8),url('') center/cover,var(--navy);color:white;padding:76px 22px}
+.hero-inner{max-width:1100px;margin:auto}.eyebrow{color:#f4d58d;text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:bold}.hero h1{font-size:clamp(32px,5vw,54px);line-height:1.12;max-width:760px;margin:12px 0}.hero p{max-width:650px;color:#e6f0f5;font-size:17px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.btn{display:inline-block;padding:12px 19px;border-radius:7px;background:var(--gold);color:#172d3d;font-weight:bold}.btn.outline{background:transparent;color:white;border:1px solid #ffffffa8}
+.wrap{max-width:1100px;margin:auto;padding:48px 22px}.section-title{margin-bottom:22px}.section-title small{color:var(--blue);font-weight:bold;text-transform:uppercase;letter-spacing:1.5px}.section-title h2{color:var(--navy);font-size:29px;margin:5px 0}.section-title p{color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border-radius:12px;padding:22px;box-shadow:0 5px 20px #18364a0b;border:1px solid #e8eef2}.card .symbol{font-size:25px}.card h3{color:var(--navy);margin:8px 0}.card p{color:var(--muted);font-size:14px;margin:0}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}.photo-placeholder{min-height:270px;border-radius:14px;background:linear-gradient(135deg,#dce9ed,#a9c8d1);display:grid;place-items:center;text-align:center;color:#23485c;padding:25px;font-weight:bold}
+.news{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.news .card{padding:0;overflow:hidden}.news-img{height:130px;background:linear-gradient(135deg,#d7e5e9,#8eafba);display:grid;place-items:center;color:#36596a;font-size:13px}.news-body{padding:18px}.news-body small{color:var(--blue);font-weight:bold}.news-body h3{font-size:17px}
+.notice{background:#eaf2f5;border-left:4px solid var(--gold);padding:17px 20px;border-radius:5px;color:#365164}
+footer{background:#102d44;color:#e8f0f4;padding:36px 22px}.foot{max-width:1100px;margin:auto;display:grid;grid-template-columns:2fr 1fr;gap:30px}.foot h3{color:#fff}.foot p,.foot a{color:#c6d6df;font-size:14px}.copyright{border-top:1px solid #ffffff24;margin-top:25px;padding-top:16px;color:#b9cbd5;font-size:12px}
+@media(max-width:800px){nav{display:none;position:absolute;top:78px;left:0;right:0;background:white;padding:18px 24px;box-shadow:0 8px 12px #0001;flex-direction:column;align-items:flex-start}nav.open{display:flex}.menu{display:block}.grid,.news{grid-template-columns:1fr 1fr}.about{grid-template-columns:1fr}}
+@media(max-width:520px){.grid,.news{grid-template-columns:1fr}.top{font-size:12px}.brand strong{font-size:14px}.brand small{font-size:11px}.hero{padding:58px 20px}.wrap{padding:38px 20px}.foot{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="top"><span>PEMERINTAH NEGERI ADMINISTRATIF PULAU AY</span><span>Kecamatan Banda · Kabupaten Maluku Tengah · Maluku</span></div>
+<header><div class="head">
+<a class="brand" href="#beranda"><div class="logo">LOGO<br>DESA</div><div><strong>NEGERI ADMINISTRATIF PULAU AY</strong><small>Kecamatan Banda, Kabupaten Maluku Tengah</small></div></a>
+<button class="menu" aria-label="Buka menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+<nav><a href="#beranda">Beranda</a><a href="#profil">Profil Desa</a><a href="#pemerintahan">Pemerintahan</a><a href="#berita">Berita</a><a href="#pembangunan">Pembangunan</a><a href="#kontak">Kontak</a></nav>
+</div></header>
+<main>
+<section class="hero" id="beranda"><div class="hero-inner">
+<div class="eyebrow">Website Informasi Pemerintahan Negeri</div>
+<h1>Selamat Datang di Negeri Administratif Pulau Ay</h1>
+<p>Media informasi dan pelayanan publik bagi masyarakat Negeri Administratif Pulau Ay. Bersama membangun negeri yang terbuka, maju, dan sejahtera.</p>
+<div class="actions"><a class="btn" href="#profil">Jelajahi Profil Desa</a><a class="btn outline" href="#kontak">Hubungi Pemerintah Negeri</a></div>
+</div></section>
+<section class="wrap" id="profil"><div class="about">
+<div><div class="section-title"><small>Tentang Kami</small><h2>Profil Negeri Pulau Ay</h2></div>
+<p>Negeri Administratif Pulau Ay berada di Kecamatan Banda, Kabupaten Maluku Tengah, Provinsi Maluku. Website ini disediakan sebagai sarana penyampaian informasi pemerintahan, kegiatan pembangunan, pelayanan, dan pengumuman kepada masyarakat.</p>
+<p class="notice">Informasi sejarah, data penduduk, potensi negeri, dan batas wilayah akan dilengkapi setelah memperoleh data resmi dari pemerintah negeri.</p></div>
+<div class="photo-placeholder">TEMPAT FOTO PULAU AY<br><small>Ganti bagian ini dengan foto resmi negeri</small></div>
+</div></section>
+<section class="wrap" id="pemerintahan"><div class="section-title"><small>Organisasi</small><h2>Pemerintahan Negeri</h2><p>Informasi perangkat dan struktur organisasi pemerintahan.</p></div>
+<div class="grid">
+<article class="card"><div class="symbol">🏛️</div><h3>Kepala Pemerintahan</h3><p>Nama pejabat dan masa jabatan agar diisi sesuai SK terbaru.</p></article>
+<article class="card"><div class="symbol">👥</div><h3>Perangkat Negeri</h3><p>Daftar sekretaris, kepala urusan, kepala seksi, dan staf.</p></article>
+<article class="card"><div class="symbol">🤝</div><h3>Lembaga Negeri</h3><p>Informasi lembaga kemasyarakatan dan unsur adat sesuai data resmi.</p></article>
+</div></section>
+<section class="wrap" id="berita"><div class="section-title"><small>Informasi Terkini</small><h2>Berita & Pengumuman</h2><p>Publikasi kegiatan dan pengumuman resmi pemerintah negeri.</p></div>
+<div class="news">
+<article class="card"><div class="news-img">FOTO KEGIATAN</div><div class="news-body"><small>BERITA DESA</small><h3>Belum ada berita yang diterbitkan</h3><p>Berita kegiatan dapat ditambahkan oleh pengelola website.</p></div></article>
+<article class="card"><div class="news-img">FOTO KEGIATAN</div><div class="news-body"><small>PENGUMUMAN</small><h3>Informasi untuk masyarakat</h3><p>Gunakan bagian ini untuk jadwal pelayanan dan pengumuman resmi.</p></div></article>
+<article class="card"><div class="news-img">FOTO KEGIATAN</div><div class="news-body"><small>DOKUMENTASI</small><h3>Galeri kegiatan negeri</h3><p>Foto pembangunan, kegiatan sosial, adat, dan kemasyarakatan.</p></div></article>
+</div></section>
+<section class="wrap" id="pembangunan"><div class="section-title"><small>Transparansi</small><h2>Pembangunan & Anggaran Negeri</h2><p>Informasi pelaksanaan program dan kegiatan pembangunan.</p></div>
+<div class="grid">
+<article class="card"><div class="symbol">🛠️</div><h3>Kegiatan Pembangunan</h3><p>Publikasi rencana, proses, dan hasil pembangunan negeri.</p></article>
+<article class="card"><div class="symbol">📊</div><h3>APBDes / Anggaran</h3><p>Ringkasan anggaran dan realisasi dipublikasikan setelah diverifikasi dan disetujui untuk diumumkan.</p></article>
+<article class="card"><div class="symbol">📷</div><h3>Dokumentasi</h3><p>Foto kegiatan dan hasil pekerjaan sebagai informasi kepada masyarakat.</p></article>
+</div></section>
+<section class="wrap" id="kontak"><div class="section-title"><small>Layanan Publik</small><h2>Kontak Pemerintah Negeri</h2><p>Silakan hubungi kantor pemerintah negeri melalui informasi resmi berikut.</p></div>
+<div class="card"><p><strong>Alamat:</strong> Negeri Administratif Pulau Ay, Kecamatan Banda, Kabupaten Maluku Tengah, Provinsi Maluku.</p><p><strong>Telepon/WhatsApp:</strong> Belum dicantumkan — isi nomor layanan resmi.</p><p><strong>Email:</strong> Belum dicantumkan — isi alamat email resmi.</p><p><strong>Jam pelayanan:</strong> Isi sesuai ketentuan kantor pemerintahan negeri.</p></div>
+</section>
+</main>
+<footer><div class="foot"><div><h3>Negeri Administratif Pulau Ay</h3><p>Website informasi dan pelayanan publik Pemerintah Negeri Administratif Pulau Ay, Kecamatan Banda, Kabupaten Maluku Tengah, Provinsi Maluku.</p></div><div><h3>Navigasi</h3><p><a href="#profil">Profil Negeri</a><br><a href="#pemerintahan">Pemerintahan</a><br><a href="#berita">Berita</a><br><a href="#kontak">Kontak</a></p></div></div><div class="copyright">© <span id="year"></span> Pemerintah Negeri Administratif Pulau Ay. Informasi resmi dikelola oleh pemerintah negeri.</div></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('nav').classList.remove('open')));</script>
+</body></html>
