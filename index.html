@@ -1,71 +1,466 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Website informasi resmi Negeri Administratif Pulau Ay, Kecamatan Banda, Kabupaten Maluku Tengah.">
-<title>Negeri Administratif Pulau Ay</title>
-<style>
-:root{--navy:#123451;--blue:#176b87;--gold:#e4b653;--ink:#203040;--muted:#657786;--bg:#f4f7f9;--white:#fff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
-a{color:inherit;text-decoration:none}.top{background:var(--navy);color:#fff;padding:8px 5%;font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-header{background:#fff;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px #102a3a18}.head{max-width:1160px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.brand{display:flex;align-items:center;gap:12px}.logo{width:52px;height:52px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--navy);font-weight:bold;font-size:13px;text-align:center;line-height:1.1}.brand strong{display:block;color:var(--navy);font-size:17px}.brand small{color:var(--muted)}
-nav{display:flex;gap:17px;align-items:center;font-size:14px;font-weight:bold}nav a:hover{color:var(--blue)}.menu{display:none;background:var(--navy);color:#fff;border:0;border-radius:7px;padding:9px 12px;font-size:18px}
-.hero{background:linear-gradient(100deg,#0d2d47ed,#176b87b8),url('') center/cover,var(--navy);color:white;padding:76px 22px}
-.hero-inner{max-width:1100px;margin:auto}.eyebrow{color:#f4d58d;text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:bold}.hero h1{font-size:clamp(32px,5vw,54px);line-height:1.12;max-width:760px;margin:12px 0}.hero p{max-width:650px;color:#e6f0f5;font-size:17px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.btn{display:inline-block;padding:12px 19px;border-radius:7px;background:var(--gold);color:#172d3d;font-weight:bold}.btn.outline{background:transparent;color:white;border:1px solid #ffffffa8}
-.wrap{max-width:1100px;margin:auto;padding:48px 22px}.section-title{margin-bottom:22px}.section-title small{color:var(--blue);font-weight:bold;text-transform:uppercase;letter-spacing:1.5px}.section-title h2{color:var(--navy);font-size:29px;margin:5px 0}.section-title p{color:var(--muted);margin:0}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border-radius:12px;padding:22px;box-shadow:0 5px 20px #18364a0b;border:1px solid #e8eef2}.card .symbol{font-size:25px}.card h3{color:var(--navy);margin:8px 0}.card p{color:var(--muted);font-size:14px;margin:0}
-.about{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}.photo-placeholder{min-height:270px;border-radius:14px;background:linear-gradient(135deg,#dce9ed,#a9c8d1);display:grid;place-items:center;text-align:center;color:#23485c;padding:25px;font-weight:bold}
-.news{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.news .card{padding:0;overflow:hidden}.news-img{height:130px;background:linear-gradient(135deg,#d7e5e9,#8eafba);display:grid;place-items:center;color:#36596a;font-size:13px}.news-body{padding:18px}.news-body small{color:var(--blue);font-weight:bold}.news-body h3{font-size:17px}
-.notice{background:#eaf2f5;border-left:4px solid var(--gold);padding:17px 20px;border-radius:5px;color:#365164}
-footer{background:#102d44;color:#e8f0f4;padding:36px 22px}.foot{max-width:1100px;margin:auto;display:grid;grid-template-columns:2fr 1fr;gap:30px}.foot h3{color:#fff}.foot p,.foot a{color:#c6d6df;font-size:14px}.copyright{border-top:1px solid #ffffff24;margin-top:25px;padding-top:16px;color:#b9cbd5;font-size:12px}
-@media(max-width:800px){nav{display:none;position:absolute;top:78px;left:0;right:0;background:white;padding:18px 24px;box-shadow:0 8px 12px #0001;flex-direction:column;align-items:flex-start}nav.open{display:flex}.menu{display:block}.grid,.news{grid-template-columns:1fr 1fr}.about{grid-template-columns:1fr}}
-@media(max-width:520px){.grid,.news{grid-template-columns:1fr}.top{font-size:12px}.brand strong{font-size:14px}.brand small{font-size:11px}.hero{padding:58px 20px}.wrap{padding:38px 20px}.foot{grid-template-columns:1fr}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemerintah Negeri Administratif Pulau Ay</title>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #eab308;
+            --accent-hover: #ca8a04;
+            --text-light: #f8fafc;
+            --text-dark: #334155;
+            --bg-light: #f1f5f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: #020617;
+            color: #94a3b8;
+            font-size: 0.75rem;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* Header / Navbar */
+        header {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--accent);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-placeholder {
+            width: 48px;
+            height: 48px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 0.7rem;
+            text-align: center;
+            line-height: 1.1;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .brand-text h1 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-text p {
+            font-size: 0.75rem;
+            color: #94a3b8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+            color: var(--text-light);
+            padding: 4rem 2rem 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: linear-gradient(to top right, var(--bg-light) 49%, transparent 50%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.75rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--primary);
+            box-shadow: 0 4px 6px -1px rgba(234, 179, 8, 0.2), 0 2px 4px -1px rgba(234, 179, 8, 0.1);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(234, 179, 8, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-light);
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.05);
+            border-color: var(--text-light);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1100px;
+            margin: -2rem auto 4rem auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Section Card */
+        .section-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .section-title h3 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: var(--accent);
+            margin: 0.5rem auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Perangkat Desa Grid */
+        .perangkat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Kaling/Kepala Adat Big Card Placement */
+        .leader-row {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .member-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .member-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px -8px rgba(0,0,0,0.1);
+            border-color: #cbd5e1;
+        }
+
+        .member-card.featured {
+            border: 2px solid var(--accent);
+            max-width: 350px;
+            width: 100%;
+            background: linear-gradient(to bottom, #fffdf5 0%, #ffffff 100%);
+        }
+
+        .avatar-placeholder {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            margin-bottom: 1.25rem;
+            border: 3px solid var(--bg-light);
+        }
+
+        .member-card.featured .avatar-placeholder {
+            border-color: #fef08a;
+            background-color: #f1f5f9;
+        }
+
+        .member-info h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .member-info .role {
+            font-size: 0.85rem;
+            color: var(--accent-hover);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+        }
+
+        .member-info .meta {
+            font-size: 0.8rem;
+            color: #64748b;
+            border-top: 1px dashed #e2e8f0;
+            padding-top: 0.75rem;
+            margin-top: 0.5rem;
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.85rem;
+            border-top: 4px solid var(--accent);
+        }
+
+        footer p {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 600px) {
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+            .hero p {
+                font-size: 0.9rem;
+            }
+            header {
+                padding: 1rem;
+            }
+            .section-card {
+                padding: 1.5rem 1rem;
+            }
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="top"><span>PEMERINTAH NEGERI ADMINISTRATIF PULAU AY</span><span>Kecamatan Banda · Kabupaten Maluku Tengah · Maluku</span></div>
-<header><div class="head">
-<a class="brand" href="#beranda"><div class="logo">LOGO<br>DESA</div><div><strong>NEGERI ADMINISTRATIF PULAU AY</strong><small>Kecamatan Banda, Kabupaten Maluku Tengah</small></div></a>
-<button class="menu" aria-label="Buka menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
-<nav><a href="#beranda">Beranda</a><a href="#profil">Profil Desa</a><a href="#pemerintahan">Pemerintahan</a><a href="#berita">Berita</a><a href="#pembangunan">Pembangunan</a><a href="#kontak">Kontak</a></nav>
-</div></header>
-<main>
-<section class="hero" id="beranda"><div class="hero-inner">
-<div class="eyebrow">Website Informasi Pemerintahan Negeri</div>
-<h1>Selamat Datang di Negeri Administratif Pulau Ay</h1>
-<p>Media informasi dan pelayanan publik bagi masyarakat Negeri Administratif Pulau Ay. Bersama membangun negeri yang terbuka, maju, dan sejahtera.</p>
-<div class="actions"><a class="btn" href="#profil">Jelajahi Profil Desa</a><a class="btn outline" href="#kontak">Hubungi Pemerintah Negeri</a></div>
-</div></section>
-<section class="wrap" id="profil"><div class="about">
-<div><div class="section-title"><small>Tentang Kami</small><h2>Profil Negeri Pulau Ay</h2></div>
-<p>Negeri Administratif Pulau Ay berada di Kecamatan Banda, Kabupaten Maluku Tengah, Provinsi Maluku. Website ini disediakan sebagai sarana penyampaian informasi pemerintahan, kegiatan pembangunan, pelayanan, dan pengumuman kepada masyarakat.</p>
-<p class="notice">Informasi sejarah, data penduduk, potensi negeri, dan batas wilayah akan dilengkapi setelah memperoleh data resmi dari pemerintah negeri.</p></div>
-<div class="photo-placeholder">TEMPAT FOTO PULAU AY<br><small>Ganti bagian ini dengan foto resmi negeri</small></div>
-</div></section>
-<section class="wrap" id="pemerintahan"><div class="section-title"><small>Organisasi</small><h2>Pemerintahan Negeri</h2><p>Informasi perangkat dan struktur organisasi pemerintahan.</p></div>
-<div class="grid">
-<article class="card"><div class="symbol">🏛️</div><h3>Kepala Pemerintahan</h3><p>Nama pejabat dan masa jabatan agar diisi sesuai SK terbaru.</p></article>
-<article class="card"><div class="symbol">👥</div><h3>Perangkat Negeri</h3><p>Daftar sekretaris, kepala urusan, kepala seksi, dan staf.</p></article>
-<article class="card"><div class="symbol">🤝</div><h3>Lembaga Negeri</h3><p>Informasi lembaga kemasyarakatan dan unsur adat sesuai data resmi.</p></article>
-</div></section>
-<section class="wrap" id="berita"><div class="section-title"><small>Informasi Terkini</small><h2>Berita & Pengumuman</h2><p>Publikasi kegiatan dan pengumuman resmi pemerintah negeri.</p></div>
-<div class="news">
-<article class="card"><div class="news-img">FOTO KEGIATAN</div><div class="news-body"><small>BERITA DESA</small><h3>Belum ada berita yang diterbitkan</h3><p>Berita kegiatan dapat ditambahkan oleh pengelola website.</p></div></article>
-<article class="card"><div class="news-img">FOTO KEGIATAN</div><div class="news-body"><small>PENGUMUMAN</small><h3>Informasi untuk masyarakat</h3><p>Gunakan bagian ini untuk jadwal pelayanan dan pengumuman resmi.</p></div></article>
-<article class="card"><div class="news-img">FOTO KEGIATAN</div><div class="news-body"><small>DOKUMENTASI</small><h3>Galeri kegiatan negeri</h3><p>Foto pembangunan, kegiatan sosial, adat, dan kemasyarakatan.</p></div></article>
-</div></section>
-<section class="wrap" id="pembangunan"><div class="section-title"><small>Transparansi</small><h2>Pembangunan & Anggaran Negeri</h2><p>Informasi pelaksanaan program dan kegiatan pembangunan.</p></div>
-<div class="grid">
-<article class="card"><div class="symbol">🛠️</div><h3>Kegiatan Pembangunan</h3><p>Publikasi rencana, proses, dan hasil pembangunan negeri.</p></article>
-<article class="card"><div class="symbol">📊</div><h3>APBDes / Anggaran</h3><p>Ringkasan anggaran dan realisasi dipublikasikan setelah diverifikasi dan disetujui untuk diumumkan.</p></article>
-<article class="card"><div class="symbol">📷</div><h3>Dokumentasi</h3><p>Foto kegiatan dan hasil pekerjaan sebagai informasi kepada masyarakat.</p></article>
-</div></section>
-<section class="wrap" id="kontak"><div class="section-title"><small>Layanan Publik</small><h2>Kontak Pemerintah Negeri</h2><p>Silakan hubungi kantor pemerintah negeri melalui informasi resmi berikut.</p></div>
-<div class="card"><p><strong>Alamat:</strong> Negeri Administratif Pulau Ay, Kecamatan Banda, Kabupaten Maluku Tengah, Provinsi Maluku.</p><p><strong>Telepon/WhatsApp:</strong> Belum dicantumkan — isi nomor layanan resmi.</p><p><strong>Email:</strong> Belum dicantumkan — isi alamat email resmi.</p><p><strong>Jam pelayanan:</strong> Isi sesuai ketentuan kantor pemerintahan negeri.</p></div>
-</section>
-</main>
-<footer><div class="foot"><div><h3>Negeri Administratif Pulau Ay</h3><p>Website informasi dan pelayanan publik Pemerintah Negeri Administratif Pulau Ay, Kecamatan Banda, Kabupaten Maluku Tengah, Provinsi Maluku.</p></div><div><h3>Navigasi</h3><p><a href="#profil">Profil Negeri</a><br><a href="#pemerintahan">Pemerintahan</a><br><a href="#berita">Berita</a><br><a href="#kontak">Kontak</a></p></div></div><div class="copyright">© <span id="year"></span> Pemerintah Negeri Administratif Pulau Ay. Informasi resmi dikelola oleh pemerintah negeri.</div></footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('nav').classList.remove('open')));</script>
-</body></html>
+
+    <!-- Baris Informasi Atas -->
+    <div class="top-bar">
+        Kecamatan Banda • Kabupaten Maluku Tengah • Maluku
+    </div>
+
+    <!-- Header / Navigasi -->
+    <header>
+        <div class="brand-container">
+            <div class="logo-placeholder">LOGO<br>DESA</div>
+            <div class="brand-text">
+                <h1>NEGERI ADMINISTRATIF PULAU AY</h1>
+                <p>Portal Informasi Resmi Pemerintah Negeri</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Selamat Datang -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Selamat Datang di Negeri Administratif<br>Pulau Ay</h2>
+            <p>Media informasi dan pelayanan publik digital bagi seluruh masyarakat Negeri Administratif Pulau Ay. Bersama membangun negeri yang terbuka, maju, dan sejahtera.</p>
+            <div class="cta-buttons">
+                <a href="#perangkat" class="btn btn-primary">Jelajahi Profil Desa</a>
+                <a href="#" class="btn btn-secondary">Hubungi Pemerintah Negeri</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Konten Utama -->
+    <div class="container" id="perangkat">
+        <div class="section-card">
+            <div class="section-title">
+                <h3>Struktur Perangkat Pemerintahan Negeri</h3>
+            </div>
+            
+            <div class="perangkat-grid">
+                
+                <!-- Pemimpin Utama / Kepala Negeri -->
+                <div class="leader-row">
+                    <div class="member-card featured">
+                        <div class="avatar-placeholder">
+                            <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5-4-8-4z"/></svg>
+                        </div>
+                        <div class="member-info">
+                            <h4>Nama Kepala Negeri</h4>
+                            <div class="role">Kepala Negeri Administratif</div>
+                            <p class="meta">Pimpinan Tertinggi Pemerintahan Negeri</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Perangkat Desa / Staf / Urusan -->
+                <div class="member-card">
+                    <div class="avatar-placeholder">
+                        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5-4-8-4z"/></svg>
+                    </div>
+                    <div class="member-info">
+                        <h4>Nama Sekretaris</h4>
+                        <div class="role">Sekretaris Negeri</div>
+                        <p class="meta">Urusan Administrasi & Pelayanan</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="avatar-placeholder">
+                        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5-4-8-4z"/></svg>
+                    </div>
+                    <div class="member-info">
+                        <h4>Nama Kaur Keuangan</h4>
+                        <div class="role">Kaur Keuangan</div>
+                        <p class="meta">Pengelolaan Anggaran & Keuangan</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="avatar-placeholder">
+                        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5-4-8-4z"/></svg>
+                    </div>
+                    <div class="member-info">
+                        <h4>Nama Kaur Perencanaan</h4>
+                        <div class="role">Kaur Perencanaan</div>
+                        <p class="meta">Penyusunan Program Kerja Negeri</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="avatar-placeholder">
+                        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5-4-8-4z"/></svg>
+                    </div>
+                    <div class="member-info">
+                        <h4>Nama Kasi Pemerintahan</h4>
+                        <div class="role">Kasi Pemerintahan</div>
+                        <p class="meta">Manajemen Regulasi & Kependudukan</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="avatar-placeholder">
+                        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5-4-8-4z"/></svg>
+                    </div>
+                    <div class="member-info">
+                        <h4>Nama Kasi Kesejahteraan</h4>
+                        <div class="role">Kasi Kesejahteraan</div>
+                        <p class="meta">Pembangunan & Sosial Masyarakat</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="avatar-placeholder">
+                        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5-4-8-4z"/></svg>
+                    </div>
+                    <div class="member-info">
+                        <h4>Nama Kasi Pelayanan</h4>
+                        <div class="role">Kasi Pelayanan</div>
+                        <p class="meta">Pelayanan Umum Publik Warga</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Kaki Halaman -->
+    <footer>
+        <p>© 2026 Pemerintah Negeri Administratif Pulau Ay. Seluruh Hak Cipta Dilindungi.</p>
+        <span>Dikembangkan secara mandiri menggunakan teknologi Serverless Cloudflare.</span>
+    </footer>
+
+</body>
+</html>
